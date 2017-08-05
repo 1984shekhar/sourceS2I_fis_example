@@ -1,0 +1,15 @@
+source s2i deployment of FIS 2.0 application on Openshift environment.
+
+mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate \
+  -DarchetypeCatalog=https://maven.repository.redhat.com/ga/io/fabric8/archetypes/archetypes-catalog/2.2.195.redhat-000004/archetypes-catalog-2.2.195.redhat-000004-archetype-catalog.xml \
+  -DarchetypeGroupId=org.jboss.fuse.fis.archetypes \
+  -DarchetypeArtifactId=spring-boot-camel-xml-archetype \
+  -DarchetypeVersion=2.2.195.redhat-000004
+
+#initialize git repo in local and move it to remote git repo.
+vi Steps.txt
+git init
+git add Steps.txt
+git commit -m "Steps for reference"
+git remote add origin https://github.com/1984shekhar/fisTest.git
+git push origin master
